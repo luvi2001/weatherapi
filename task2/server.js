@@ -24,7 +24,7 @@ mongoose
   .then(() => console.log('DB Connected'))
   .catch((err) => console.error('Error connecting to database:', err));
 
-  cron.schedule('*/2 * * * *', async () => {
+  cron.schedule('0 */3 * * *', async () => {
     try {
       console.log('Running scheduled task...');
       const users = await User.find();
