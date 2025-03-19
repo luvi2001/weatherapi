@@ -24,7 +24,7 @@ mongoose
 
 
 
-cron.schedule('*/5 * * * *', async () => {
+cron.schedule('0 */3 * * *', async () => {
   try {
     console.log('Running scheduled task...');
     
