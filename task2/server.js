@@ -17,11 +17,7 @@ app.use('/', weatherRoutes);
 
 
 
-const PORT = 4000
 
-app.listen(PORT, () => {
-  console.log(`API listening on PORT ${PORT} `)
-})
 
 // Database connection
 mongoose
@@ -83,5 +79,11 @@ mongoose
       console.error('Error during scheduled task:', err.message, err);
     }
   });
+
+  const PORT = 4000
+
+app.listen(PORT, () => {
+  console.log(`API listening on PORT ${PORT} `)
+})
   
  
