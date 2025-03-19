@@ -1,6 +1,6 @@
-import User from '../models/user.js';
+const User = require('../models/user');
 
-export const createUser = async (req, res) => {
+const createUser = async (req, res) => {
   const { email, location } = req.body;
   try {
     const user = new User({ email, location });
@@ -11,7 +11,7 @@ export const createUser = async (req, res) => {
   }
 };
 
-export const updateUserLocation = async (req, res) => {
+const updateUserLocation = async (req, res) => {
   const { location } = req.body;
   try {
     const user = await User.findOneAndUpdate(
@@ -24,3 +24,5 @@ export const updateUserLocation = async (req, res) => {
     res.status(500).send('Error updating location');
   }
 };
+
+module.exports = { createUser, updateUserLocation };

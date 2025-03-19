@@ -1,12 +1,12 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import cron from 'node-cron';
-import nodemailer from 'nodemailer';
-import User from './models/user.js';
-import * as weatherController from './controllers/weatherController.js';
-import userRoutes from './routes/userRoutes.js';
-import weatherRoutes from './routes/weatherRoutes.js';
-import dotenv from 'dotenv';
+const express = require('express');
+const mongoose = require('mongoose');
+const cron = require('node-cron');
+const nodemailer = require('nodemailer');
+const User = require('./models/user');
+const weatherController = require('./controllers/weatherController');
+const userRoutes = require('./routes/userRoutes');
+const weatherRoutes = require('./routes/weatherRoutes');
+const dotenv = require('dotenv');
 
 dotenv.config();
 
@@ -86,4 +86,5 @@ app.listen(PORT, () => {
   console.log(`API listening on PORT ${PORT}`);
 });
 
-export default app;
+// Exporting the app for testing or further use
+module.exports = app;

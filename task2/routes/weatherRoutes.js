@@ -1,5 +1,5 @@
-import express from 'express';
-import User from '../models/user.js';
+const express = require('express');
+const User = require('../models/user.js');
 const router = express.Router();
 
 router.get('/weather/:email/:date', async (req, res) => {
@@ -17,5 +17,4 @@ router.get('/weather/:email/:date', async (req, res) => {
   }
 });
 
-
-export default router;
+module.exports = router;

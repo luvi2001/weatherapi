@@ -1,14 +1,9 @@
-import axios from 'axios';
-import dotenv from 'dotenv';
+const axios = require('axios');
+const dotenv = require('dotenv');
 dotenv.config();
-import Configuration  from 'openai';
-import OpenAIApi from 'openai';
+const { Configuration, OpenAIApi } = require('openai');
 
-
-
-
-
-export const fetchWeatherData = async (location) => {
+const fetchWeatherData = async (location) => {
   const apiKey = '6d5621f3aee9e0c254138faf08e380fd';
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
 
@@ -25,7 +20,7 @@ export const fetchWeatherData = async (location) => {
   }
 };
 
-export const generateWeatherText = async (weatherData, location) => {
+const generateWeatherText = async (weatherData, location) => {
   try {
     // Initialize OpenAI API with the provided API key
     const configuration = new Configuration({
@@ -50,3 +45,5 @@ export const generateWeatherText = async (weatherData, location) => {
     return null;
   }
 };
+
+module.exports = { fetchWeatherData, generateWeatherText };
