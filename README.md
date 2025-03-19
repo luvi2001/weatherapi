@@ -140,7 +140,7 @@ Error: Runtime exited with error: exit status 1
 
 
 
-I was not able to sole it and i checked the dependencies in package.json and node modules everuthing is installed properly.And also I used vercel community to solve but I couldn't.
+I was not able to solve it and i checked the dependencies in package.json and node modules everything is installed properly.And also I used vercel community to solve but I couldn't.
 
 Therefore I deployed it in Render and it is working perfectly in render. I apologize for not being able to solve the error.
 
