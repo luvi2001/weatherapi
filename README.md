@@ -122,7 +122,7 @@ PUT /users/:email
 
 ### Special note
 
-I am getting an error while deploying in vercel that
+I am getting a 500 error while deploying in vercel that
 
 
 Cannot find module '../operations/delete'
