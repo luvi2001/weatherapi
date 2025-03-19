@@ -7,6 +7,7 @@ const weatherController = require('./controllers/weatherController');
 const userRoutes = require('./routes/userRoutes');
 const weatherRoutes = require('./routes/weatherRoutes');
 const dotenv = require('dotenv');
+const { MongoClient } = require('mongodb');
 
 dotenv.config();
 
