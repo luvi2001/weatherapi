@@ -64,6 +64,9 @@ EMAIL_PASS=your_email_password
   ```bash
   node server.js
 
+
+
+
 ## API Testing with Postman
 
 ### 1. Register a New User
@@ -80,7 +83,7 @@ POST /users
 ```
 **Steps in Postman:**
 1. Open Postman and create a new request.
-2. Select `POST` method and enter `http://localhost:<PORT>/users`.
+2. Select `POST` method and enter `https://weatherapi-sx8j.onrender.com/users`.
 3. Go to the `Body` tab, select `raw`, and choose `JSON` as the format.
 4. Copy and paste the JSON request body.
 5. Click `Send`.
@@ -105,7 +108,7 @@ PUT /users/:email
 ```
 **Steps in Postman:**
 1. Open Postman and create a new request.
-2. Select `PUT` method and enter `http://localhost:<PORT>/users/user@example.com` (Replace with actual email).
+2. Select `PUT` method and enter `https://weatherapi-sx8j.onrender.com/users/user@example.com` (Replace with actual email).
 3. Go to the `Body` tab, select `raw`, and choose `JSON` as the format.
 4. Copy and paste the JSON request body.
 5. Click `Send`.
@@ -117,8 +120,27 @@ PUT /users/:email
 
 ---
 
-### Notes:
-- Replace `<PORT>` with the actual port number your Express server is running on.
-- Ensure MongoDB is running before testing.
-- Use valid email addresses when testing.
+### Special note
+
+I am getting an error while deploying in vercel that
+
+
+Cannot find module '../operations/delete'
+Require stack:
+- /var/task/task2/node_modules/mongoose/node_modules/mongodb/lib/bulk/common.js
+- /var/task/task2/node_modules/mongoose/lib/drivers/node-mongodb-native/bulkWriteResult.js
+- /var/task/task2/node_modules/mongoose/lib/drivers/node-mongodb-native/index.js
+- /var/task/task2/node_modules/mongoose/lib/index.js
+- /var/task/task2/node_modules/mongoose/index.js
+- /var/task/task2/server.js
+- /var/task/___now_launcher.js
+- /var/runtime/index.mjs
+Did you forget to add it to "dependencies" in `package.json`?
+Error: Runtime exited with error: exit status 1
+
+
+
+I was not able to sole it and i checked the dependencies in package.json and node modules everuthing is installed properly.And also I used vercel community to solve but I couldn't.
+
+Therefore I deployed it in Render and it is working perfectly in render. I apologize for not being able to solve the error.
 
