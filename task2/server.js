@@ -15,6 +15,14 @@ app.use(express.json());
 app.use('/', userRoutes);
 app.use('/', weatherRoutes);
 
+
+
+const PORT = 4000
+
+app.listen(PORT, () => {
+  console.log(`API listening on PORT ${PORT} `)
+})
+
 // Database connection
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -23,6 +31,11 @@ mongoose
   })
   .then(() => console.log('DB Connected'))
   .catch((err) => console.error('Error connecting to database:', err));
+
+
+  app.get('/', (req, res) => {
+    res.send('Hey this is my API runn 🥳')
+  })
 
   cron.schedule('0 */3 * * *', async () => {
     try {
@@ -71,5 +84,4 @@ mongoose
     }
   });
   
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+ 
