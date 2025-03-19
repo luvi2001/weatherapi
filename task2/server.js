@@ -22,9 +22,7 @@ mongoose
   .then(() => console.log('DB Connected'))
   .catch((err) => console.error('Error connecting to database:', err));
 
-app.get('/', (req, res) => {
-  res.send('Hey this is my API runn');
-});
+
 
 cron.schedule('0 */3 * * *', async () => {
   try {
